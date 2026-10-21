@@ -1,0 +1,5 @@
+1. Move mTransform out. Position and scale are needed by lots of things that are not sprites, 
+like a hitbox or a camera, while the texture and vertex data are only there for drawing.
+
+2. Draw the see-through sprites from back to front, so the farther one is drawn first. 
+The blend depends on which sprite is drawn on top of which, so stacked tinted windows only look right if the back window is already drawn before the front one.
